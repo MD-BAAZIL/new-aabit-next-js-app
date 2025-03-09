@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -17,7 +18,7 @@ const Navbar = () => {
     <div className=" fixed inset-x-0 top-0 z-50">
       <nav className="flex px-8 py-4 justify-between items-center bg-black">
         <div>
-          <Link className="text-green-500 lg:text-4xl text-2xl lg:ml-5 font-bold" href="#">NATIVE SPICES</Link>
+          <Link className="text-green-500 lg:text-4xl text-2xl lg:ml-5 font-bold" href="/">NATIVE SPICES</Link>
         </div>
         <div className="hidden lg:block text-white text-sm lg:text-lg">
           <div className="flex gap-7">
@@ -28,10 +29,10 @@ const Navbar = () => {
                 <Link className="border-green-500 hover:border-b-2" href="/about">About</Link>
             </div>
             <div className="">
-                <Link className="border-green-500 hover:border-b-2" href="/">Product</Link>
+                <Link className="border-green-500 hover:border-b-2" href="/products">Product</Link>
             </div>
             <div className="">
-                <Link className="border-green-500 hover:border-b-2" href="/">Contact</Link>
+                <Link className="border-green-500 hover:border-b-2" href="/contact">Contact</Link>
             </div>
             
             </div>
@@ -49,7 +50,7 @@ const Navbar = () => {
             viewBox="0 0 24 24" 
             strokeWidth="2" 
             stroke="currentColor" 
-            className={`size-6 transition-transform duration-500 ease-in-out ${!isMenuOpen? "roatate-180": "rotate-0"}`}>
+            className={`size-6 transition-transform duration-500 ease-in-out ${isMenuOpen? "roatate-180": "rotate-0"}`}>
   
           {!isMenuOpen ?(
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -67,7 +68,7 @@ const Navbar = () => {
 
         <div className={`transforme transition-transform duration-500 ease-in-out
           ${isMenuOpen? "translate-x-full": "translate-x-0"}`}>
-        <div className="lg:hidden fixed  right-0 bg-black w-1/4 text-center h-screen text-white text-sm :text-lg">
+        <div className="lg:hidden fixed  right-0 w-[150] bg-black text-center h-screen text-white text-sm :text-lg">
           <div className="">
           <div className="p-3 text-lg">
                 <Link className="border-green-500 hover:border-b-2" href="/">Home</Link>
@@ -76,7 +77,7 @@ const Navbar = () => {
                 <Link className="border-green-500 hover:border-b-2" href="/about">About</Link>
             </div>
             <div className="p-3 text-lg">
-                <Link className="border-green-500 hover:border-b-2" href="/">Product</Link>
+                <Link className="border-green-500 hover:border-b-2" href="/products">Product</Link>
             </div>
             <div className="p-3 text-lg">
                 <Link className="border-green-500 hover:border-b-2" href="/">Contact</Link>
